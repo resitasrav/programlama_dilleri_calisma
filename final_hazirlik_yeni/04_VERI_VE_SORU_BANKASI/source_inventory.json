@@ -1,0 +1,122 @@
+[
+  {
+    "source": "Ders Sunumları.zip",
+    "stored_as": "03_KAYNAKLAR/04_EK_MATERYALLER/Proje_Odevleri_Orijinal_Arsiv.zip",
+    "category": "zip"
+  },
+  {
+    "source": "Ders Sunumları.zip::Ders Sunumları/25360859334programlamadilleridonemproesi.pdf",
+    "stored_as": "03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG/Proje_Raporu_01_Go_Goroutine_Channel.pdf",
+    "category": "proje"
+  },
+  {
+    "source": "Ders Sunumları.zip::Ders Sunumları/ProgramlamaDilleriProje_23360859051_İsmailBİLGİN.pdf",
+    "stored_as": "03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG/Proje_Raporu_02_Rust_Ownership_Borrowing.pdf",
+    "category": "proje"
+  },
+  {
+    "source": "Ders Sunumları.zip::Ders Sunumları/Programlama_Dilleri_Ödev_Raporu_MadinaYusupova_24360859922.pdf",
+    "stored_as": "03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG/Proje_Raporu_03_Erlang_Process_Message_Passing.pdf",
+    "category": "proje"
+  },
+  {
+    "source": "Ders Sunumları.zip::Ders Sunumları/Scala Dili-1.pdf",
+    "stored_as": "03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG/Proje_Raporu_04_Scala_Trait_Object_Pattern_Matching.pdf",
+    "category": "proje"
+  },
+  {
+    "source": "index.html",
+    "stored_as": "03_KAYNAKLAR/04_EK_MATERYALLER/Ek_Materyal_Eski_Index.html",
+    "category": "ek"
+  },
+  {
+    "source": "Konu 1.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_01_Programlama_Dillerine_Giris.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 10.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_10_Alt_Programlar_Parametre_Gecisi.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 11.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_11_Function_Parameter_Binding_Closure_Coroutine.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 12.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_12_Activation_Record_Stack_Frame.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 13.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_13_ADT_Veri_Soyutlama.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 14.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_14_OOP_Inheritance_Dynamic_Binding.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 15.pdf",
+    "stored_as": "03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15/Konu_15_Concurrency_Synchronization.pdf",
+    "category": "final"
+  },
+  {
+    "source": "Konu 2.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_02_Dil_Tasarimi_ve_Degerlendirme.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 3.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_03_Syntax_Semantics_BNF.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 4.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_04_Syntax_Analizi_Agaclar.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 5.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_05_Isimler_Binding_Scope.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 6.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_06_Veri_Tipleri_Bellek_Lifetime.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 7.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_07_Ifadeler_Type_Checking_Side_Effect.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 8.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_08_Kontrol_Yapilari_Secim.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "Konu 9.pdf",
+    "stored_as": "03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09/Konu_09_Donguler_Kontrol_Akisi.pdf",
+    "category": "vize"
+  },
+  {
+    "source": "programlama_dilleri.pdf",
+    "stored_as": "03_KAYNAKLAR/04_EK_MATERYALLER/Ek_Materyal_Programlama_Dilleri.pdf",
+    "category": "ek"
+  },
+  {
+    "source": "programlama_dilleri_kısa.pdf",
+    "stored_as": "03_KAYNAKLAR/04_EK_MATERYALLER/Ek_Materyal_Programlama_Dilleri_Kisa.pdf",
+    "category": "ek"
+  },
+  {
+    "source": "PROMPT.md",
+    "stored_as": "03_KAYNAKLAR/04_EK_MATERYALLER/Prompt_Uretim_Talimati.md",
+    "category": "ek"
+  }
+]

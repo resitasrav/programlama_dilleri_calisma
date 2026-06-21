@@ -1,8 +1,8 @@
 import json, re
 from pathlib import Path
 here = Path(__file__).resolve().parent
-root = here if (here / "02_INTERAKTIF_SISTEM" / "app.js").exists() else here.parent
-app = root / "02_INTERAKTIF_SISTEM" / "app.js"
+root = here if (here / "01_INTERAKTIF_CALISMA_SISTEMI" / "app.js").exists() else here.parent
+app = root / "01_INTERAKTIF_CALISMA_SISTEMI" / "app.js"
 text = app.read_text(encoding="utf-8")
 m = re.search(r"const QUESTIONS = (\[.*?\]);\nwindow\.QUESTIONS", text, re.S)
 assert m, "QUESTIONS bulunamadi"

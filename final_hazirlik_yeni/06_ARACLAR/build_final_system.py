@@ -8,20 +8,20 @@ from docx import Document
 from pypdf import PdfReader
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "final_hazirlik_yeni"
 PYTHON = "bundled"
 
 DIRS = {
-    "vize": OUT / "00_KAYNAKLAR" / "01_vize_temeli_slaytlar",
-    "final": OUT / "00_KAYNAKLAR" / "02_final_agirlikli_slaytlar",
-    "proje": OUT / "00_KAYNAKLAR" / "03_proje_odevleri_ve_dil_raporlari",
-    "ek": OUT / "00_KAYNAKLAR" / "04_ek_materyaller",
-    "ozet": OUT / "01_OZETLER",
-    "app": OUT / "02_INTERAKTIF_SISTEM",
-    "veri": OUT / "03_VERI",
-    "rapor": OUT / "04_RAPORLAR",
-    "arac": OUT / "99_araclar",
+    "vize": OUT / "03_KAYNAKLAR" / "01_VIZE_TEMELI_KONU_01_09",
+    "final": OUT / "03_KAYNAKLAR" / "02_FINAL_AGIRLIKLI_KONU_10_15",
+    "proje": OUT / "03_KAYNAKLAR" / "03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG",
+    "ek": OUT / "03_KAYNAKLAR" / "04_EK_MATERYALLER",
+    "ozet": OUT / "02_CALISMA_NOTLARI",
+    "app": OUT / "01_INTERAKTIF_CALISMA_SISTEMI",
+    "veri": OUT / "04_VERI_VE_SORU_BANKASI",
+    "rapor": OUT / "05_RAPORLAR",
+    "arac": OUT / "06_ARACLAR",
 }
 
 
@@ -513,8 +513,8 @@ def write_validation_scripts():
     validate_py = r'''import json, re
 from pathlib import Path
 here = Path(__file__).resolve().parent
-root = here if (here / "02_INTERAKTIF_SISTEM" / "app.js").exists() else here.parent
-app = root / "02_INTERAKTIF_SISTEM" / "app.js"
+root = here if (here / "01_INTERAKTIF_CALISMA_SISTEMI" / "app.js").exists() else here.parent
+app = root / "01_INTERAKTIF_CALISMA_SISTEMI" / "app.js"
 text = app.read_text(encoding="utf-8")
 m = re.search(r"const QUESTIONS = (\[.*?\]);\nwindow\.QUESTIONS", text, re.S)
 assert m, "QUESTIONS bulunamadi"
@@ -550,7 +550,7 @@ const elements={dashboard:{innerHTML:""},resultCount:{textContent:""},questions:
 const storage={};
 const sandbox={console,setTimeout,localStorage:{getItem:k=>storage[k]||null,setItem:(k,v)=>storage[k]=String(v)},document:{getElementById:id=>elements[id]||(elements[id]={innerHTML:"",textContent:"",value:"",checked:false,classList:cls(),addEventListener(){}}),querySelectorAll:()=>[],addEventListener(){}},window:{},confirm:()=>true};
 sandbox.globalThis=sandbox; vm.createContext(sandbox);
-vm.runInContext(fs.readFileSync("02_INTERAKTIF_SISTEM/app.js","utf8"), sandbox);
+vm.runInContext(fs.readFileSync("01_INTERAKTIF_CALISMA_SISTEMI/app.js","utf8"), sandbox);
 if(!Array.isArray(sandbox.window.QUESTIONS)||sandbox.window.QUESTIONS.length<150) throw new Error("QUESTIONS yok");
 sandbox.toggleExplain("smoke"); if(!elements["exp-smoke"].classList.contains("visible")) throw new Error("toggleExplain show failed");
 sandbox.toggleExplain("smoke"); if(elements["exp-smoke"].classList.contains("visible")) throw new Error("toggleExplain hide failed");
@@ -586,19 +586,19 @@ Interaktif sistemi açmak için:
 
 `index.html`
 
-Alt klasor kopyasi da `02_INTERAKTIF_SISTEM/index.html` icindedir.
+Alt klasor kopyasi da `01_INTERAKTIF_CALISMA_SISTEMI/index.html` icindedir.
 
 ## Klasörler
 
-- `00_KAYNAKLAR/01_vize_temeli_slaytlar`: Konu 1-9
-- `00_KAYNAKLAR/02_final_agirlikli_slaytlar`: Konu 10-15
-- `00_KAYNAKLAR/03_proje_odevleri_ve_dil_raporlari`: ZIP içinden çıkarılan proje raporları ve dil tanıtımları
-- `00_KAYNAKLAR/04_ek_materyaller`: genel özetler ve ek dosyalar
-- `01_OZETLER`: final özeti, detaylı özet, dil karşılaştırma, kod tanıma rehberi, klasik notları
-- `02_INTERAKTIF_SISTEM`: offline HTML/CSS/JS çalışma sistemi
-- `03_VERI`: kaynak envanteri ve çıkarılmış metinler
-- `04_RAPORLAR`: üretim ve kaynak raporları
-- `99_araclar`: yeniden üretim/doğrulama scriptleri
+- `03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09`: Konu 1-9
+- `03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15`: Konu 10-15
+- `03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG`: ZIP içinden çıkarılan proje raporları ve dil tanıtımları
+- `03_KAYNAKLAR/04_EK_MATERYALLER`: genel özetler ve ek dosyalar
+- `02_CALISMA_NOTLARI`: final özeti, detaylı özet, dil karşılaştırma, kod tanıma rehberi, klasik notları
+- `01_INTERAKTIF_CALISMA_SISTEMI`: offline HTML/CSS/JS çalışma sistemi
+- `04_VERI_VE_SORU_BANKASI`: kaynak envanteri ve çıkarılmış metinler
+- `05_RAPORLAR`: üretim ve kaynak raporları
+- `06_ARACLAR`: yeniden üretim/doğrulama scriptleri
 
 ## Soru Bankası
 
@@ -625,7 +625,7 @@ Veriler tarayıcı `localStorage` alanında `pd-final-progress-v2` anahtarıyla 
 - Kod yorumlama/deger takip soru sayisi: {counts.get('kod_yorumlama', 0)}
 - Proje dosyalarindan cikan diller: Rust, Go, Scala, Erlang
 - Final agirlikli en kritik konular: alt programlar; parametre gecisi; function parameter binding; closure; coroutine; activation record; ADT; OOP; inheritance; polymorphism; dynamic binding; type system; exception handling; concurrency; Rust/Go/Scala/Erlang
-- Eksik/okunamayan dosyalar: Metin cikariminda okunamayan sayfa varsa `03_VERI/source_extracts.json` icinde `[OKUNAMADI]` etiketiyle gorunur.
+- Eksik/okunamayan dosyalar: Metin cikariminda okunamayan sayfa varsa `04_VERI_VE_SORU_BANKASI/source_extracts.json` icinde `[OKUNAMADI]` etiketiyle gorunur.
 - Yapilan otomatik kontroller: app.js syntax, soru sayisi, ID tekrar, cevap anahtari, sik aciklamalari, etiket/kaynak varligi, filtre uyumu, localStorage/favori/aciklama islevleri, CDN kontrolu
 - Manuel kalite kontrol sonucu: Rust ownership, Go channel/goroutine, Scala trait/object, Erlang process/pattern matching, scope/binding ve parametre gecisi sorulari ozellikle guclendirildi.
 - Acmak icin tiklanacak dosya: `index.html`
@@ -633,11 +633,6 @@ Veriler tarayıcı `localStorage` alanında `pd-final-progress-v2` anahtarıyla 
 """
     (OUT / "FINAL_RAPORU.md").write_text(final_report, encoding="utf-8")
 
-    for name in ["index.html", "style.css", "app.js"]:
-        shutil.copy2(DIRS["app"] / name, OUT / name)
-    for path in sorted(DIRS["ozet"].glob("*.md")):
-        shutil.copy2(path, OUT / path.name)
-    shutil.copy2(DIRS["arac"] / "validate_system.py", OUT / "validate_system.py")
     extract_script = """from build_final_system import ensure_dirs, collect_sources
 
 if __name__ == "__main__":
@@ -645,7 +640,7 @@ if __name__ == "__main__":
     inventory, extracts = collect_sources()
     print({"inventory": len(inventory), "extracts": len(extracts)})
 """
-    (OUT / "extract_sources.py").write_text(extract_script, encoding="utf-8")
+    (DIRS["arac"] / "extract_sources.py").write_text(extract_script, encoding="utf-8")
 
 
 def main():

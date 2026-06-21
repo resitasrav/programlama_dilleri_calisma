@@ -1,34 +1,62 @@
-# Programlama Dilleri Final Hazırlık
+# Programlama Dilleri Final Hazirlik
 
-Bu klasör yeniden oluşturuldu ve her şey sınıflandırılmış alt klasörlere ayrıldı.
+Bu klasor final calismasi icin derli toplu son yapidir. Dosyalar konu ve kullanim amacina gore ayrildi; kok dizinde yalniz baslangic sayfasi, README ve final raporu tutulur.
 
-## Açılış
-
-Interaktif sistemi açmak için:
+## Ilk Acilacak Dosya
 
 `index.html`
 
-Alt klasor kopyasi da `02_INTERAKTIF_SISTEM/index.html` icindedir.
+Interaktif soru sistemine dogrudan girmek icin:
 
-## Klasörler
+`01_INTERAKTIF_CALISMA_SISTEMI/index.html`
 
-- `00_KAYNAKLAR/01_vize_temeli_slaytlar`: Konu 1-9
-- `00_KAYNAKLAR/02_final_agirlikli_slaytlar`: Konu 10-15
-- `00_KAYNAKLAR/03_proje_odevleri_ve_dil_raporlari`: ZIP içinden çıkarılan proje raporları ve dil tanıtımları
-- `00_KAYNAKLAR/04_ek_materyaller`: genel özetler ve ek dosyalar
-- `01_OZETLER`: final özeti, detaylı özet, dil karşılaştırma, kod tanıma rehberi, klasik notları
-- `02_INTERAKTIF_SISTEM`: offline HTML/CSS/JS çalışma sistemi
-- `03_VERI`: kaynak envanteri ve çıkarılmış metinler
-- `04_RAPORLAR`: üretim ve kaynak raporları
-- `99_araclar`: yeniden üretim/doğrulama scriptleri
+Internet gerekmez. Sistem tamamen offline calisir.
 
-## Soru Bankası
+## Klasor Yapisi
 
-Toplam soru: 161
+- `01_INTERAKTIF_CALISMA_SISTEMI`: Offline HTML/CSS/JS soru bankasi.
+- `02_CALISMA_NOTLARI`: Final ozetleri, konu konu notlar, dil karsilastirma, kod tanima rehberi ve tahmini sorular.
+- `03_KAYNAKLAR`: Ders slaytlari, final agirlikli konular, proje dili raporlari ve ek materyaller.
+- `04_VERI_VE_SORU_BANKASI`: Kaynak envanteri ve cikarilmis metin verileri.
+- `05_RAPORLAR`: Kaynak envanteri ve uretim raporlari.
+- `06_ARACLAR`: Yeniden uretim ve validasyon scriptleri.
 
+## Kaynak Klasorleri
+
+- `03_KAYNAKLAR/01_VIZE_TEMELI_KONU_01_09`: Vize temeli ama finalle baglantili slaytlar.
+- `03_KAYNAKLAR/02_FINAL_AGIRLIKLI_KONU_10_15`: Final agirlikli slaytlar.
+- `03_KAYNAKLAR/03_PROJE_DILLERI_RUST_GO_SCALA_ERLANG`: Proje odevlerinden cikan dil raporlari.
+- `03_KAYNAKLAR/04_EK_MATERYALLER`: Ek PDF, eski HTML, prompt ve orijinal zip arsivi.
+
+## Soru Bankasi
+
+- Toplam soru: 161
 - Test: 85
 - Klasik: 24
-- Dil tanıma: 24
+- Dil tanima: 24
 - Kod yorumlama: 28
 
-Veriler tarayıcı `localStorage` alanında `pd-final-progress-v2` anahtarıyla saklanır.
+Tarayici ilerlemesi `localStorage` icinde saklanir:
+
+- `pd-final-progress-v2`: cozulme, dogru/yanlis, favori bilgileri
+- `pd-final-filters-v2`: son filtre ve arama tercihleri
+
+## Onerilen Calisma Sirasi
+
+1. `02_CALISMA_NOTLARI/06_FINAL_ICIN_EN_KRITIK_50_BILGI.md`
+2. `02_CALISMA_NOTLARI/01_GENEL_FINAL_OZETI.md`
+3. `02_CALISMA_NOTLARI/04_KOD_PARCA_DIL_TANIMA_REHBERI.md`
+4. `01_INTERAKTIF_CALISMA_SISTEMI/index.html`
+5. Yanlis yapilan ve favori sorularin tekrari
+6. `02_CALISMA_NOTLARI/07_HOCA_TARZI_TAHMINI_SORULAR.md`
+
+## Validasyon
+
+Kok klasorden:
+
+```powershell
+python 06_ARACLAR/validate_system.py
+node 06_ARACLAR/validate_interactions.js
+```
+
+Kontroller soru sayisi, cevap anahtari, bos aciklama, ID tekrari, etiket/kaynak varligi, localStorage, favori ve aciklama goster/gizle islevlerini kapsar.

@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programlama Dilleri Final Hazırlık</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Programlama Dilleri Final Hazirlik</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#172033}
+    main{max-width:880px;margin:0 auto;padding:44px 20px}
+    h1{font-size:30px;margin:0 0 10px}
+    p{line-height:1.55;color:#475467}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+    a{display:block;text-decoration:none;color:#172033;background:#fff;border:1px solid #d7dde5;border-radius:8px;padding:16px}
+    a strong{display:block;margin-bottom:6px}
+    .primary{border-color:#0f766e;box-shadow:0 0 0 2px rgba(15,118,110,.08)}
+    code{background:#eef2f7;border-radius:4px;padding:2px 5px}
+  </style>
 </head>
 <body>
-  <header class="topbar"><div><h1>Programlama Dilleri Final Hazırlık</h1><p>Offline soru bankası, özetler, filtreler ve ilerleme takibi</p></div><button id="resetBtn">Sıfırla</button></header>
-  <main class="layout">
-    <aside class="panel">
-      <input id="searchBox" type="search" placeholder="Konu, kavram, dil veya soru ara">
-      <select id="typeFilter"><option value="">Tüm türler</option><option value="test">Test</option><option value="klasik">Klasik</option><option value="dil_tanima">Dil tanıma</option><option value="kod_yorumlama">Kod yorumlama</option></select>
-      <select id="difficultyFilter"><option value="">Tüm zorluklar</option></select>
-      <label><input type="checkbox" id="favOnly"> Favoriler</label>
-      <label><input type="checkbox" id="wrongOnly"> Yanlışlar</label>
-      <label><input type="checkbox" id="unsolvedOnly"> Cozulmemisler</label>
-      <div id="tagFilters" class="chips"></div>
-    </aside>
-    <section>
-      <section id="dashboard" class="dashboard"></section>
-      <div class="toolbar"><strong id="resultCount"></strong><button id="clearFilters">Filtreleri temizle</button></div>
-      <div id="questions"></div>
-    </section>
+  <main>
+    <h1>Programlama Dilleri Final Hazirlik</h1>
+    <p>Bu klasor derli toplu son yapidir. Interaktif soru sistemi, calisma notlari, kaynaklar, veri dosyalari, raporlar ve araclar ayri klasorlerde tutulur.</p>
+    <div class="grid">
+      <a class="primary" href="01_INTERAKTIF_CALISMA_SISTEMI/index.html"><strong>Interaktif calisma sistemi</strong>161 soruluk offline test, klasik, dil tanima ve kod yorumlama bankasi.</a>
+      <a href="02_CALISMA_NOTLARI/06_FINAL_ICIN_EN_KRITIK_50_BILGI.md"><strong>Final icin kritik 50 bilgi</strong>Final sabahi hizli tekrar dosyasi.</a>
+      <a href="02_CALISMA_NOTLARI/04_KOD_PARCA_DIL_TANIMA_REHBERI.md"><strong>Kod parcasi dil tanima rehberi</strong>Rust, Go, Scala, Erlang ve diger dillerin ayirt edici ipuclari.</a>
+      <a href="FINAL_RAPORU.md"><strong>Final raporu</strong>Kaynaklar, soru sayilari ve validasyon ozeti.</a>
+    </div>
+    <p>Ana uygulama dosyasi: <code>01_INTERAKTIF_CALISMA_SISTEMI/index.html</code></p>
   </main>
-  <script src="app.js"></script>
 </body>
 </html>

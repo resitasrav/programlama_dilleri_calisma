@@ -4,7 +4,7 @@ const elements={dashboard:{innerHTML:""},resultCount:{textContent:""},questions:
 const storage={};
 const sandbox={console,setTimeout,localStorage:{getItem:k=>storage[k]||null,setItem:(k,v)=>storage[k]=String(v)},document:{getElementById:id=>elements[id]||(elements[id]={innerHTML:"",textContent:"",value:"",checked:false,classList:cls(),addEventListener(){}}),querySelectorAll:()=>[],addEventListener(){}},window:{},confirm:()=>true};
 sandbox.globalThis=sandbox; vm.createContext(sandbox);
-vm.runInContext(fs.readFileSync("02_INTERAKTIF_SISTEM/app.js","utf8"), sandbox);
+vm.runInContext(fs.readFileSync("01_INTERAKTIF_CALISMA_SISTEMI/app.js","utf8"), sandbox);
 if(!Array.isArray(sandbox.window.QUESTIONS)||sandbox.window.QUESTIONS.length<150) throw new Error("QUESTIONS yok");
 sandbox.toggleExplain("smoke"); if(!elements["exp-smoke"].classList.contains("visible")) throw new Error("toggleExplain show failed");
 sandbox.toggleExplain("smoke"); if(elements["exp-smoke"].classList.contains("visible")) throw new Error("toggleExplain hide failed");

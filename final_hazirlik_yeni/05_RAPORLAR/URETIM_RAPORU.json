@@ -9,14 +9,12 @@
     "kod_yorumlama": 28
   },
   "klasor_yapisi": {
-    "vize": "00_KAYNAKLAR\\01_vize_temeli_slaytlar",
-    "final": "00_KAYNAKLAR\\02_final_agirlikli_slaytlar",
-    "proje": "00_KAYNAKLAR\\03_proje_odevleri_ve_dil_raporlari",
-    "ek": "00_KAYNAKLAR\\04_ek_materyaller",
-    "ozet": "01_OZETLER",
-    "app": "02_INTERAKTIF_SISTEM",
-    "veri": "03_VERI",
-    "rapor": "04_RAPORLAR"
+    "uygulama": "01_INTERAKTIF_CALISMA_SISTEMI",
+    "notlar": "02_CALISMA_NOTLARI",
+    "kaynaklar": "03_KAYNAKLAR",
+    "veri": "04_VERI_VE_SORU_BANKASI",
+    "raporlar": "05_RAPORLAR",
+    "araclar": "06_ARACLAR"
   },
   "proje_dilleri": [
     "Rust",
