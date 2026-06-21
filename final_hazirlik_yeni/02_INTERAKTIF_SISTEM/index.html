@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programlama Dilleri Final Hazırlık</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><div><h1>Programlama Dilleri Final Hazırlık</h1><p>Offline soru bankası, özetler, filtreler ve ilerleme takibi</p></div><button id="resetBtn">Sıfırla</button></header>
+  <main class="layout">
+    <aside class="panel">
+      <input id="searchBox" type="search" placeholder="Konu, kavram, dil veya soru ara">
+      <select id="typeFilter"><option value="">Tüm türler</option><option value="test">Test</option><option value="klasik">Klasik</option><option value="dil_tanima">Dil tanıma</option><option value="kod_yorumlama">Kod yorumlama</option></select>
+      <select id="difficultyFilter"><option value="">Tüm zorluklar</option></select>
+      <label><input type="checkbox" id="favOnly"> Favoriler</label>
+      <label><input type="checkbox" id="wrongOnly"> Yanlışlar</label>
+      <label><input type="checkbox" id="unsolvedOnly"> Cozulmemisler</label>
+      <div id="tagFilters" class="chips"></div>
+    </aside>
+    <section>
+      <section id="dashboard" class="dashboard"></section>
+      <div class="toolbar"><strong id="resultCount"></strong><button id="clearFilters">Filtreleri temizle</button></div>
+      <div id="questions"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
