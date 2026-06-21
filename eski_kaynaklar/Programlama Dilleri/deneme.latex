@@ -1,0 +1,473 @@
+ 
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Programlama Dilleri - Konu \textbf{Ö}zeti}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Programlama Dillerine Genel Bak\i\c{s}}
+Programlama dillerinin yap\i s\i n\i\ ve mant\i\u{g}\i n\i\ kavramak, yeni bir dil geli\c{s}tirmek veya bir problemi \c{c}\"{o}zerken do\u{g}ru dili se\c{c}ebilmek i\c{c}in olduk\c{c}a \"{o}nemlidir. Bir dilin \c{c}ok kullan\i lmas\i\ kolay \"{o}\u{g}renilmesine ba\u{g}l\i\ olsa da, bu her zaman dilin iyi tasarland\i\u{g}\i\ anlam\i na gelmez.
+
+\section*{Programlama Dillerini De\u{g}erlendirme Kriterleri}
+\begin{itemize}
+    \item \textbf{Okunabilirlik ve Sadeli\u{g}i:} Bir dildeki i\c{s}lemlerin ve s\"{o}z diziminin kolayca anla\c{s}\i labilir olmas\i d\i r. Ortogonallik (diklik), dilin tasar\i m\i ndaki kurallar\i n istisnas\i z ve d\"{u}zenli olmas\i n\i\ sa\u{g}layarak okunabilirli\u{g}i art\i r\i r.
+    \item \textbf{Yaz\i labilirlik:} Se\c{c}ilen dilin, hedeflenen problem alan\i nda yaz\i l\i m geli\c{s}tirmeye ne kadar uygun oldu\u{g}udur. \"{O}rne\u{g}in, aray\"{u}z geli\c{s}tirmek i\c{c}in Visual Basic, sistem programlama i\c{c}in ise C dili daha yaz\i labilirdir.
+    \item \textbf{\.{I}fade Edilebilirlik:} Dillerin, uzun ve hantal kodlar yerine daha k\i sa ve kullan\i \c{s}l\i\ yollar sunmas\i d\i r (\"{o}rne\u{g}in, sayma d\"{o}ng\"{u}leri i\c{c}in Java'daki \texttt{for} yap\i s\i).
+    \item \textbf{G\"{u}venilirlik:} Programdaki hatalar\i n derleme veya \c{c}al\i \c{s}ma zaman\i nda tespit edilmesini sa\u{g}layan t\"{u}r denetimi (type checking), dilin g\"{u}venilirli\u{g}i i\c{c}in kritik bir fakt\"{o}rd\"{u}r.
+    \item \textbf{Maliyet:} Bir dilin toplam maliyeti; programc\i lar\i n e\u{g}itimine, program\i n yaz\i lma s\"{u}recine, derleyici verimlili\u{g}ine ve \c{c}al\i \c{s}ma zaman\i ndaki denetim y\"{u}k\"{u}ne ba\u{g}l\i d\i r.
+\end{itemize}
+
+\section*{Programlar\i n \c{C}al\i \c{s}t\i r\i lma Y\"{o}ntemleri}
+\begin{itemize}
+    \item \textbf{Derleme (Compiler):} Kaynak kod makine diline \c{c}evrilir ve ard\i ndan bilgisayarda do\u{g}rudan, \c{c}ok h\i zl\i\ bir \c{s}ekilde \c{c}al\i \c{s}t\i r\i l\i r (\"{O}rn: C ve C++). Bu s\"{u}re\c{c} lexikal analiz, s\"{o}z dizimi analizi ve ara dil \"{u}retimi gibi a\c{s}amalardan olu\c{s}ur.
+    \item \textbf{Ba\u{g}lay\i c\i\ (Linker):} Derleyici taraf\i ndan \"{u}retilen kodlar\i n ve gerekli k\"{u}t\"{u}phanelerin birle\c{s}tirilerek nihai \c{c}al\i \c{s}t\i r\i labilir (\"{o}rn. .EXE) dosyan\i n olu\c{s}turulmas\i ndan sorumludur.
+    \item \textbf{Hibrit Sistemler ve JIT:} Y\"{u}ksek seviyeli kod \"{o}nce bir ara dile (bytecode) \c{c}evrilir. Java ve .NET gibi sistemlerde kullan\i lan JIT (Just-in-Time) derleyiciler, bu ara kodu program\i n \c{c}al\i \c{s}mas\i\ s\i ras\i nda makine koduna anl\i k olarak d\"{o}n\"{u}\c{s}t\"{u}r\"{u}r.
+\end{itemize}
+
+\section*{\"{O}ne \c{C}\i kan Diller ve Kavramlar}
+\begin{itemize}
+    \item \textbf{Tarihsel Geli\c{s}im:} Bilimsel hesaplamalar i\c{c}in Fortran, yapay zeka uygulamalar\i\ i\c{c}in LISP ve sembolik programlama i\c{c}in Prolog kullan\i lm\i \c{s}t\i r.
+    \item \textbf{Prolog:} Bir t\"{u}r ak\i ll\i\ veritaban\i\ olarak \c{c}al\i \c{s}an bu dil, olgular (facts) ve kurallar (rules) mant\i \u{g}\i\ ile hedeflenen sorgular\i\ \c{c}\"{o}z\"{u}mler.
+    \item \textbf{Java ve C++ Kar\c{s}\i la\c{s}t\i rmas\i:} Java, C++ temel al\i narak ancak daha g\"{u}venilir ve basit olacak \c{s}ekilde geli\c{s}tirilmi\c{s}tir. Java'da i\c{s}aret\c{c}iler (pointer) bulunmaz, yaln\i zca nesne y\"{o}nelimli programlama desteklenir ve \c{c}oklu kal\i t\i m yoktur.
+    \item \textbf{Halting Problemi:} Bir program\i n sorunsuz \c{c}al\i \c{s}\i p sonlan\i p sonlanmayaca\u{g}\i na, program\i\ fiilen \c{c}al\i \c{s}t\i rmadan karar verebilecek bir derleyici veya ba\c{s}ka bir program yaz\i lamayaca\u{g}\i n\i\ ifade eder.
+\end{itemize}
+\section*{Konu 2: Halting Problemi ve Hesaplanabilirlik}
+
+\subsection*{Halting Problemi (Durma Problemi)}
+\begin{itemize}
+    \item Halting problemi, bir programın belirli bir girdiyle sonsuz döngüye mi gireceğini yoksa sorunsuz bir şekilde sonlanacağını mı (çalıştırmadan önce) belirleyebilecek genel bir "statik analizör" (başka bir program) yazılamayacağını ifade eder[cite: 420, 423, 425].
+    \item \textbf{Çelişki İspatı:} Eğer programların durup durmayacağını kesin olarak bilen bir \texttt{H} programı olduğunu varsayarsak, bu \texttt{H} programını kullanarak yeni bir \texttt{K} programı yazabiliriz[cite: 440, 441]. \texttt{K} programı, kendisine verilen program duruyorsa sonsuz döngüye girer, durmuyorsa durur[cite: 442, 451]. \texttt{K} programını kendi üzerine çalıştırdığımızda (\texttt{K(K)}) kendi kendisiyle çelişir (durursa durmaz, durmazsa durur)[cite: 457, 459]. Bu paradoks, baştaki \texttt{H} programının var olamayacağını kanıtlar[cite: 462].
+\end{itemize}
+
+\subsection*{Kısıtlı Halting Problemi ve İndirgeme (Reduction)}
+\begin{itemize}
+    \item Bir programın "sabit bir fonksiyon hesaplayıp hesaplamadığını" doğrulama problemi de karar verilemez (undecidable) bir problemdir[cite: 465].
+    \item \textbf{İspat Mantığı:} Bu problem, doğrudan Halting problemine indirgenerek (reduction yöntemiyle) ispatlanır[cite: 470]. Eğer sabit fonksiyon hesaplamayı çözen bir sistem olsaydı, bunu kullanarak programların durup durmadığını da (Halting problemi) çözebilirdik, ki bu imkansızdır[cite: 486, 488, 490].
+\end{itemize}
+
+\subsection*{Hesaplanabilirlik (Computability) ve Church-Turing Tezi}
+\begin{itemize}
+    \item \textbf{Church-Turing Tezi:} "Sezgisel olarak hesaplanabilir her fonksiyon, bir Turing Makinesi tarafından hesaplanabilir"[cite: 501, 506]. Bu bir matematiksel teorem değil, bilgisayar bilimleri tarafından kabul edilen felsefi bir ilkedir[cite: 502, 503].
+    \item \textbf{Turing-Tamlık (Turing Completeness):} Her genel amaçlı programlama dili (C, Java, LISP vb.) algoritmik güç açısından birbirine ve Turing makinesine denktir[cite: 497, 516, 525].
+    \item \textbf{Kısmi Tanımlılık (Partiality):} Bir programın ifade ettiği fonksiyonlar bazı girdiler için tanımsız olabilir; bu durum programın o girdilerde sonsuz döngüye girip sonlanmamasına (çökmesine) karşılık gelir[cite: 523, 524].
+\end{itemize}
+
+\section*{Konu 3: Sözdizim (Syntax) ve Anlambilim (Semantics)}
+
+\subsection*{Temel Kavramlar ve Dili Yakalama}
+\begin{itemize}
+    \item \textbf{Sözdizim (Syntax):} İfadelerin, deyimlerin ve program birimlerinin biçimi ve yapısal kurallarıdır[cite: 530].
+    \item \textbf{Anlambilim (Semantics):} Bu yapıların taşıdığı gerçek anlamdır ve doğrudan sözdiziminden çıkarılabilmelidir[cite: 531, 539].
+
+    \item \textbf{Tanıyıcılar (Recognizers):} Derleyicilerin "sözdizimsel analiz (syntax analysis)" kısımları birer tanıyıcıdır; verilen kodun programlama dilinin kurallarına ait olup olmadığını (kabul veya ret) belirler[cite: 544, 551, 553].
+\end{itemize}
+\newpage
+\subsection*{Bağlam Bağımsız Gramerler ve BNF}
+\begin{itemize}
+    \item \textbf{BNF (Backus-Naur Form):} Programlama dillerinin sözdizimini (bağlam bağımsız gramerleri) tanımlamak için kullanılan bir üstdildir (metalanguage)[cite: 558, 563].
+    \item Kurallar soyutlamalar ile yazılır (örneğin \texttt{<assign> $\rightarrow$ <var> = <expression>})[cite: 566].
+    \item \textbf{Belirsizlik (Ambiguity):} Aynı ifade için birden fazla farklı "Sözdizim Ağacı (Parse Tree)" çıkarılabiliyorsa o gramer belirsizdir[cite: 638]. Özellikle matematiksel işlemlerde "İşlem Sırası (Precedence)" sorunlarına (toplama mı önce çarpma mı?) yol açar[cite: 634, 635].
+    \item \textbf{Çözümü:} Belirsizliği ortadan kaldırmak için farklı öncelik düzeylerine sahip işlemciler için ayrı non-terminal semboller (\texttt{<term>}, \texttt{<factor>} gibi) eklenerek yeni kurallar yazılır[cite: 640, 646].
+\end{itemize}
+
+\subsection*{Genişletilmiş BNF (EBNF)}
+\begin{itemize}
+    \item BNF'nin ifade gücünü artırmaz ancak okunabilirliğini ve yazılabilirliğini kolaylaştırır[cite: 709]. Temel metasemboller şunlardır:
+    \item \textbf{Köşeli Parantez [ ]:} İsteğe bağlı (optional) kısımları belirtir (örneğin \texttt{[else <statement>]})[cite: 711, 713].
+    \item \textbf{Süslü Parantez \{ \}:} Sıfır veya daha fazla tekrar edebilecek kısımları (iteration) belirtir[cite: 719, 720].
+    \item \textbf{Normal Parantez ve Dikey Çizgi ( | ):} Çoktan seçmeli seçeneklerden birinin seçileceğini ifade eder[cite: 725].
+\end{itemize}
+
+\subsection*{Öznitelik Gramerleri (Attribute Grammars)}
+\begin{itemize}
+    \item BNF'nin tanımlayamadığı statik anlambilim kurallarını (tip uyuşmazlığı, metot isimlerinin başı ve sonunun aynı olması gibi) tanımlamak için kullanılır[cite: 757].
+    \item Parse ağacında bilgiler alt düğümlerden üst düğümlere (\texttt{actual\_type}) veya üstten alta (\texttt{expected\_type}) aktarılarak mantıksal doğrulama (Predicate) yapılır[cite: 769, 778, 806].
+\end{itemize}
+
+\subsection*{Aksiyomatik Anlambilim ve Program Doğrulama}
+\begin{itemize}
+    \item Bir programın nasıl çalıştığını değil, \textbf{doğruluğunu kanıtlamayı} hedefleyen, matematiksel mantığa dayalı sistemdir[cite: 812, 814, 821]. $\{P\} S \{Q\}$ formatında yazılır (P: Önkoşul, S: İfade, Q: Sonkoşul)[cite: 880].
+    \item \textbf{En Zayıf Önkoşul (Weakest Precondition):} Bir ifadenin sonkoşulunu (Q) doğru kılan en az kısıtlayıcı önkoşuldur[cite: 828].
+    \item \textbf{Atama Aksiyomu ($P = Q_{x \to E}$):} Atama işlemlerinde en zayıf önkoşul, sonkoşuldaki değişken yerine atanan ifadenin konmasıyla (substitution) bulunur[cite: 862, 864, 871].
+    \item \textbf{Sonuç Kuralı (Rule of Consequence):} Eğer hesaplanan önkoşul, verilen önkoşuldan daha genişse (Önkoşul güçlendirilebilir, sonkoşul zayıflatılabilir prensibi) kullanılır[cite: 890, 895]. 
+    \item \textbf{Koşul Seçimi (If-Else):} İki dal (then ve else) için ayrı ayrı önkoşullar hesaplanır ve her ikisini de kapsayan ortak mantıksal koşul en zayıf önkoşul olarak seçilir[cite: 923, 926].
+\end{itemize}
+    \newpage
+\section*{Vize İçin Çalışma Soruları (PDF Konu 3)}
+
+\textbf{Soru 1:} Aşağıdaki gramer kurallarının belirsizlik (ambiguity) yarattığını bir örnek ile gösteriniz. [cite: 929, 930]
+\[ S \rightarrow A \]
+\[ A \rightarrow A + A \mid id \]
+\textit{Çözüm İpucu:} "$id + id + id$" ifadesi için iki farklı parse ağacı (önce soldaki toplamayı yapan veya önce sağdaki toplamayı yapan) çizilebilmektedir, bu da belirsizliğe kanıttır.
+
+\vspace{0.5cm}
+\textbf{Soru 2:} Aşağıdaki $S \rightarrow a Sc B \mid A$, $A \rightarrow cA \mid c$, $B \rightarrow d$ kuralını kullanarak verilen ifadelerden hangileri üretilebilir? [cite: 934, 935, 936, 937, 938, 939, 940, 941]
+\begin{itemize}
+    \item a. abcd 
+    \item b. acccbd 
+    \item c. accebcc 
+    \item d. accd 
+    \item e. ccc 
+\end{itemize}
+\textit{Çözüm İpucu:} S kuralından ilerleyip türetme (derivation) adımlarını kağıt üzerinde test ediniz (Örn: \textit{d. accd} üretilebilir: $S \rightarrow aScB \rightarrow aAcB \rightarrow a c c d$ vb.)
+
+\vspace{0.5cm}
+\textbf{Soru 3:} Aşağıdaki ifadeler için en zayıf önkoşulları (weakest precondition) hesaplayınız. [cite: 932, 933]
+\begin{itemize}
+    \item \textbf{a.} $z = 2*(b-1)-1 \quad \{z > 0\}$ \\
+    \textit{Çözüm:} $2*(b-1)-1 > 0 \implies 2b - 2 - 1 > 0 \implies 2b > 3 \implies b > 1.5$
+    
+    \item \textbf{b.} $b = (c+10)/3 \quad \{b > 6\}$ \\
+    \textit{Çözüm:} $(c+10)/3 > 6 \implies c+10 > 18 \implies c > 8$
+    
+    \item \textbf{c.} $a = a+2*b-1 \quad \{a > 1\}$ \\
+    \textit{Çözüm:} $a+2*b-1 > 1 \implies a+2b > 2$
+    
+    \item \textbf{d.} $x = 2*y+x-1 \quad \{x > 11\}$ \\
+    \textit{Çözüm:} $2*y+x-1 > 11 \implies 2y+x > 12$
+\end{itemize}
+\newpage
+\section*{Konu 4: Sözcüksel (Lexical) ve Sözdizimsel (Syntax) Analiz}
+
+\subsection*{Sözcüksel ve Sözdizimsel Analizin Ayr\i lmas\i}
+Derleme s\"{u}recinde bu iki a\c{s}aman\i n ayr\i lmas\i n\i n 3 temel nedeni vard\i r:
+\begin{itemize}
+    \item \textbf{Basitlik:} Sözcüksel analiz teknikleri daha az karmaşıktır. Ayırmak, her iki analizörün de daha sade olmasını sağlar.
+    \item \textbf{Verimlilik:} Derleme süresinin büyük bir kısmı sözcüksel analizde geçer. Bu ayrım, sadece sözcüksel analizör üzerinde agresif optimizasyon yapılmasına imkan tanır.
+    \item \textbf{Ta\c{s}\i nabilirlik:} Sözcüksel analizör dosyaları okuduğu için platforma bağımlıdır (tamponlama vs.). Sözdizimsel analizör ise platformdan bağımsız kalabilir.
+\end{itemize}
+
+\subsection*{Sözcüksel Analiz (Lexical Analysis)}
+Sözdizimsel analizörün "ön yüzü" olarak çalışır. Girdi karakter dizilerini mantıksal gruplara ayırır.
+\begin{itemize}
+    \item \textbf{Lexeme (Sözcük-Birim):} Karakterlerin oluşturduğu mantıksal gruplardır (örn. \texttt{result}, \texttt{=}, \texttt{100}).
+    \item \textbf{Token (Jeton):} Lexeme'lerin türlerini belirten iç kodlardır (örn. \texttt{IDENT}, \texttt{ASSIGN\_OP}, \texttt{INT\_LIT}).
+    \item Sözcüksel analizörler; durum geçiş diyagramları (state transition diagrams) ile manuel olarak yazılabileceği gibi, \texttt{lex} gibi araçlarla otomatik olarak da üretilebilir.
+\end{itemize}
+
+\subsection*{Sözdizimsel Analiz (Ayr\i\c{s}t\i rma - Parsing)}
+Sözdizimsel analizin temel amacı kodun doğru yazılıp yazılmadığını kontrol etmek (hata varsa kurtarmak) ve çeviri için bir \textbf{çözümleme ağacı (parse tree)} oluşturmaktır.
+\begin{itemize}
+    \item \textbf{Yukarıdan Aşağıya (Top-Down):} Ağaç kökten yapraklara doğru inşa edilir. "Sol en soldan türetme (Leftmost derivation)" kullanır. Çözücünün görevi, sıradaki cümsel form için doğru gramer kuralını seçmektir.
+    \item \textbf{Aşağıdan Yukarıya (Bottom-Up - LR Parsers):} Çözümleme ağacı yapraklardan köke doğru inşa edilir. "Sağ en soldan türetmenin tersini" kullanır. Genellikle \textbf{Shift-Reduce} algoritmaları olarak bilinirler.
+\end{itemize}
+
+\subsection*{Aşağıdan Yukarı Ayr\i\c{s}t\i rma (Shift-Reduce) ve LR Tablolar\i}
+Her bottom-up çözücünün temel bileşeni bir \textbf{Yığın (Stack)}'tır.
+\begin{itemize}
+    \item \textbf{Shift (Kayd\i r):} Sıradaki girdi token'ını alır ve yığına (stack) taşır.
+    \item \textbf{Reduce (İndirgeme):} Yığının tepesindeki eşleşen yapıyı (handle), gramer kuralının sol tarafındaki (LHS) sembol ile değiştirir.
+    \item \textbf{ACTION Tablosu:} Yığının tepesindeki duruma ve sıradaki girdiye bakarak hangi işlemin yapılacağını (Shift, Reduce, Accept, Error) söyler.
+    \item \textbf{GOTO Tablosu:} Bir "Reduce" işlemi yapıldıktan sonra yığına eklenecek yeni durum sembolünü belirler.
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize İçin Çalışma Sorusu (Konu 4): Shift-Reduce İşlemi} \\
+\textbf{Soru:} Yığında (Stack) sırasıyla \texttt{[\$ 0 E 1 + 6 id 5]} ve sıradaki girdinin \texttt{*} olduğunu varsayalım. ACTION tablosuna göre \texttt{ACTION[5, *] = R6} (Kural 6: $F \rightarrow id$) işlemi verildiyse, Reduce adımını gerçekleştirerek yığının yeni halini yazınız. (İpucu: \texttt{GOTO[6, F] = 3}). \\
+\textit{Çözüm:} Reduce işleminde, yığının tepesindeki \texttt{id} ve durumu \texttt{5} çıkarılır, yerine Kural 6'nın sol tarafı olan \texttt{F} konur. Yeni durum GOTO tablosuna göre (6 numaralı durumdan F'ye geçiş) 3 olur. Yeni yığın: \texttt{[\$ 0 E 1 + 6 F 3]} olur.
+
+\newpage
+\section*{Konu 5: Soyutlama, Bağlama, Bloklar ve Kapsam (Scope)}
+
+\subsection*{İsimleme (Naming) ve Soyutlama (Abstraction)}
+\begin{itemize}
+    \item \textbf{Soyutlama:} Düşük seviyeli donanım detaylarını gizleyerek (örn. bellek adresi yerine değişken ismi kullanarak) daha güçlü bir ifade imkanı sağlar.
+    \item Bir isim sadece bir karakter dizisidir, ancak değişken, fonksiyon, etiket, modül gibi \textbf{Gösterilebilir Nesneleri (Denotable Objects)} temsil eder.
+    \item \textbf{Aliasing (Gölgeleme/Takma Ad):} Aynı nesnenin aynı ortamda birden fazla isimle erişilebilir olmasıdır (örn. pointer atamaları veya referans parametreler).
+\end{itemize}
+
+\subsection*{Bağlama (Binding) ve Ortam (Environment)}
+\begin{itemize}
+    \item \textbf{Bağlama (Binding):} Bir isim ile onun temsil ettiği nesne (bellek adresi, tip, değer) arasındaki ilişkinin kurulmasıdır.
+    \item \textbf{Statik Bağlama:} Program çalışmadan önce (derleme zamanında) gerçekleşir.
+    \item \textbf{Dinamik Bağlama:} Program çalışırken (runtime) gerçekleşir (örn. referanslar, pointerlar).
+    \item \textbf{Ortam (Environment):} Çalışma anında isimler ile gösterdikleri nesneler arasındaki ilişkiler kümesidir ("Bu isim şu an neyi temsil ediyor?").
+\end{itemize}
+
+\subsection*{Bloklar ve Nesne Ömrü}
+\begin{itemize}
+    \item Bloklar (örn. Java'da \texttt{\{...\}}), ortamın (environment) organizasyonu için temel mekanizmadır. Bir blok, içinde yerel bildirimler barındırabilen program parçasıdır.
+    \item \textbf{Gölgeleme (Shadowing):} İç blokta, dış bloktaki bir değişkenle aynı isimde yeni bir değişken tanımlanırsa, iç blok süresince dış tanım "gizlenir" (devre dışı kalır).
+    \item \textbf{Sarkan Referans (Dangling Reference):} Bir ismin (genellikle pointer), bellekten silinmiş/yok edilmiş bir nesneye erişmeye çalışması durumudur. Nesne ömrü bitmiş, ancak bağlama (referans) kalmıştır.
+\end{itemize}
+
+\subsection*{Statik Kapsam (Static Scope) vs Dinamik Kapsam (Dynamic Scope)}
+Bu iki kavram, bir değişkenin nerede tanımlı olduğunun (ismin nereye çözümlendiğinin) nasıl belirlendiği ile ilgilidir.
+\begin{itemize}
+    \item \textbf{Statik (Lexical) Scope:} Metin yapısına bağlıdır. Derleyici, kodun yazılış biçimine (iç içe bloklar) bakar. Bir değişken önce bulunduğu blokta, yoksa bir üst (dış) blokta aranır. (C, C++, Java, Pascal statik kapsam kullanır).
+    \item \textbf{Dinamik Scope:} Programın çalışma sırasına (runtime, execution flow) bağlıdır. Bir değişken, en son çağrılan ve hala aktif olan fonksiyondaki tanımıyla değerlendirilir. Çalışma anındaki çağrı yığınına (stack) bakılır. (LISP, Perl dinamik kapsam kullanabilir).
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize İçin Çalışma Sorusu (Konu 5): Scope Farklılıkları} \\
+\textbf{Soru:} Aşağıdaki kod parçasının Statik Scope ve Dinamik Scope kullanan dillere göre çıktılarını (ekrana ne yazdıracağını) ayrı ayrı açıklayınız.
+\begin{verbatim}
+const x = 0;
+void fie() { write(x); }
+void foo() { const x = 1; fie(); }
+
+foo();
+\end{verbatim}
+    \newpage
+\textit{Çözüm:} 
+\begin{itemize}
+    \item \textbf{Statik Scope (Lexical Scope):} Metnin yazılış sırasına bakılır. \texttt{fie()} fonksiyonunun kendi içinde bir \texttt{x} yoktur. Metinsel olarak bir üst seviyeye (global alana) bakar ve \texttt{const x = 0} değerini bulur. Ekrana \textbf{0} yazar. (C, Java gibi dillerde bu olur).
+    \item \textbf{Dinamik Scope:} Çalışma sırasına (çağrı yığınına) bakılır. Kod çalışmaya \texttt{foo()} fonksiyonundan başlar. \texttt{foo()} içinde \texttt{x = 1} tanımlanır. Daha sonra \texttt{foo()} içinden \texttt{fie()} çağrılır. \texttt{fie()} fonksiyonu \texttt{x}'i yazdırmak istediğinde çağrı yığınına geri gider ve en son aktif bağlamanın \texttt{foo()} içindeki \texttt{x = 1} olduğunu görür. Ekrana \textbf{1} yazar.
+\end{itemize}
+\newpage
+\section*{Konu 6: Kapsam, Bellek Y\"{o}netimi ve Veri Tipleri}
+
+\subsection*{Statik ve Dinamik Ata (Ancestor) Kavram\i}
+\begin{itemize}
+    \item \textbf{Statik Ata (Lexical Ancestor):} Bir alt program\i n, kaynak kodun yaz\i l\i \c{s} hiyerar\c{s}isine g\"{o}re i\c{c}inde bulundu\u{g}u t\"{u}m \"{u}st programlard\i r. (Metin yap\i s\i na ba\u{g}l\i d\i r).
+    \item \textbf{Dinamik Ata (Dynamic Ancestor):} Program\i n \c{c}al\i \c{s}mas\i\ s\i ras\i nda, o anda \c{c}a\u{g}r\i\ zincirinde (call stack) bulunan t\"{u}m \"{u}st programlard\i r. (\c{C}al\i \c{s}ma zaman\i ndaki \c{c}a\u{g}r\i\ s\i ras\i na ba\u{g}l\i d\i r).
+\end{itemize}
+
+\subsection*{De\u{g}i\c{s}kenlerin Bellek Y\"{o}netimine G\"{o}re S\i n\i fland\i r\i lmas\i}
+\begin{itemize}
+    \item \textbf{Statik De\u{g}i\c{s}kenler:} Bellekte program\i n t\"{u}m \c{c}al\i \c{s}mas\i\ boyunca sabit bir yer kaplar. Derleme zaman\i nda (compile-time) boyutu ve adresi belirlenir. H\i zl\i d\i r ancak bellek israf\i na yol a\c{c}abilir.
+    \item \textbf{Stack-Dynamic De\u{g}i\c{s}kenler:} Fonksiyon \c{c}a\u{g}r\i s\i\ s\i ras\i nda bellekte (stack frame i\c{c}inde) ayr\i l\i r ve fonksiyon bitince otomatik silinir. (\"{O}rn: C/C++'taki yerel de\u{g}i\c{s}kenler).
+    \item \textbf{Explicit Heap-Dynamic De\u{g}i\c{s}kenler:} Programc\i\ taraf\i ndan manuel olarak heap \"{u}zerinde ayr\i l\i r (\texttt{malloc}, \texttt{new}) ve serbest b\i rak\i l\i r (\texttt{free}, \texttt{delete}). B\"{u}y\"{u}k veri yap\i lar\i\ i\c{c}in esnektir ancak bellek s\i z\i nt\i s\i\ (memory leak) riski ta\c{s}\i r.
+\end{itemize}
+
+\subsection*{Referans Ortam\i\ (Referencing Environment)}
+Bir sat\i r kodun "hangi de\u{g}i\c{s}kenleri g\"{o}rebildi\u{g}i" durumudur. Statik kapsamda, o ifadenin yerel de\u{g}i\c{s}kenleri ve t\"{u}m \"{u}st (ancestor) kapsamlardaki de\u{g}i\c{s}kenlerin k\"{u}mesidir. Yak\i n kapsamdaki tan\i mlamalar, uzak olanlar\i\ gizler (shadowing).
+
+\subsection*{Veri Tipleri, Diziler ve Kay\i tlar (Records)}
+\begin{itemize}
+    \item \textbf{\.{I}lkel (Primitive) Tipler:} Say\i sal (Integer, Float, Complex, Decimal) ve Mant\i ksal (Boolean, Char) tiplerdir.
+    \item \textbf{Array (Dizi):} Ayn\i\ tipte (homojen) verilerin ard\i \c{s}\i k bellekte tutuldu\u{g}u yap\i d\i r. O(1) h\i z\i nda eri\c{s}ilir.
+    \item \textbf{Record (Kay\i t - Struct):} Farkl\i\ t\"{u}rde (heterojen) verilerin bir araya geldi\u{g}i yap\i d\i r. \.{I}simleriyle (field) eri\c{s}ilir. (C'deki \texttt{struct} gibi).
+    \item \textbf{Union:} Ayn\i\ bellek alan\i nda farkl\i\ t\"{u}rleri saklayabilen yap\i d\i r. C/C++'taki \textbf{Free Union} tip kontrol\"{u} yapmaz (tehlikelidir). Ada ve F\#'taki \textbf{Discriminated Union} ise bir etiket (tag) i\c{c}erir ve tip kontrol\"{u} yaparak g\"{u}venli\u{g}i sa\u{g}lar.
+\end{itemize}
+
+\newpage
+\subsection*{Pointerlar, Referanslar ve Heap Y\"{o}netimi}
+\begin{itemize}
+    \item \textbf{Pointer:} De\u{g}eri bellek adresi olan veri tipidir. Dolayl\i\ adresleme ve dinamik bellek y\"{o}netimi i\c{c}in kullan\i l\i r.
+    \item \textbf{Sarkan Pointer (Dangling Pointer):} Bir pointer'\i n g\"{o}sterdi\u{g}i bellek alan\i n\i n (nesnenin) silinmesi/free edilmesi ancak pointer'\i n h\^{a}l\^{a} o eski adresi g\"{o}stermeye devam etmesi durumudur.
+    \item \textbf{Kayıp Heap-Dinamik De\u{g}i\c{s}kenler (Memory Leak):} Heap \"{u}zerinde ayr\i lm\i \c{s} belle\u{g}e i\c{s}aret eden pointer'\i n ba\c{s}ka bir yere y\"{o}nlendirilmesi sonucu, o bellek alan\i na bir daha eri\c{s}ilememesi (çöp olması) durumudur.
+\end{itemize}
+
+\subsection*{\c{C}\"{o}p Toplama (Garbage Collection) Y\"{o}ntemleri}
+\begin{itemize}
+    \item \textbf{Referans Sayac\i\ (Reference Counter):} Her h\"{u}cre, kendisine i\c{s}aret eden pointer say\i s\i n\i\ tutar. Saya\c{c} 0 olunca bellek silinir. Dezavantaj\i: Dairesel referanslarda (circular reference) saya\c{c} asla 0 olmaz ve bellek s\i z\i nt\i s\i\ ya\c{s}an\i r.
+    \item \textbf{Mark-Sweep Y\"{o}ntemi (İşaretle ve Süpür):} 3 a\c{s}amal\i d\i r. 1) T\"{u}m h\"{u}creler "\c{c}\"{o}p" i\c{s}aretlenir. 2) Ula\c{s}\i labilen t\"{u}m h\"{u}creler a\u{g}a\c{c} \c{s}eklinde taranarak "\c{c}\"{o}p de\u{g}il" (kullanılıyor) i\c{s}aretlenir. 3) H\^{a}l\^{a} "\c{c}\"{o}p" i\c{s}aretli kalanlar bellekten silinir. Dairesel referans problemini \c{c}\"{o}zer.
+\end{itemize}
+
+\subsection*{Tip Denetimi (Type Checking) ve Coercion}
+\begin{itemize}
+    \item \textbf{Tip Denetimi:} Operat\"{o}rlerin operandlar\i n\i n uyumlu tipte olup olmad\i \u{g}\i n\i\ kontrol etmektir. Statik (derleme zaman\i) ve Dinamik (\c{c}al\i \c{s}ma zaman\i) olarak ikiye ayr\i l\i r.
+    \item \textbf{G\"{u}\c{c}l\"{u} Tip Sistemi (Strong Typing):} T\"{u}m tip hatalar\i n\i n mutlak suretle (derleme veya \c{c}al\i \c{s}ma zaman\i nda) tespit edilmesini garanti eden sistemdir.
+    \item \textbf{Coercion (\"{O}rt\"{u}k Tip D\"{o}n\"{u}\c{s}\"{u}m\"{u}):} Derleyici taraf\i ndan \textit{otomatik olarak} yap\i lan tip d\"{o}n\"{u}\c{s}\"{u}m\"{u}d\"{u}r (\"{o}rn: \texttt{int + float} i\c{s}leminde \texttt{int} de\u{g}erinin otomatik \texttt{float}'a \c{c}evrilmesi). Çok fazla coercion olmas\i, Strong Typing yap\i s\i n\i\ zay\i flat\i r ve hatalar\i\ gizleyebilir.
+    \item \textbf{Tip E\c{s}itli\u{g}i:} \textit{Name Type Equivalence} (ayn\i\ isimle tan\i mland\i ysa e\c{s}it say\i l\i r, kat\i d\i r) ve \textit{Structure Type Equivalence} (yap\i lar\i\ ayn\i ysa e\c{s}it say\i l\i r, esnektir) olarak ikiye ayr\i l\i r.
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize \.{I}\c{c}in \c{C}al\i \c{s}ma Sorular\i\ (Konu 6):} \\
+\textbf{Soru 1:} "Pointerlar ile ilgili iki yayg\i n problem nedir?" \\
+\textit{\c{C}\"{o}z\"{u}m:} 1) Dangling Pointer (Sarkan g\"{o}sterici): Silinmi\c{s} belle\u{g}i g\"{o}steren pointer. 2) Memory Leak (Bellek S\i z\i nt\i s\i - Kay\i p de\u{g}i\c{s}kenler): Heap'te ayr\i l\i p pointer referans\i\ kaybedildi\u{g}i i\c{c}in bir daha ula\c{s}\i lamayan \c{c}\"{o}p bellekler.
+
+\textbf{Soru 2:} "G\"{u}\c{c}l\"{u} t\"{u}r denetimini C/C++'n\i n sa\u{g}lamad\i \u{g}\i n\i\ g\"{o}steriniz." \\
+\textit{\c{C}\"{o}z\"{u}m:} C/C++'ta "Free Union" yap\i s\i\ tip denetimi yapmaz. Ayr\i ca explicit (manuel) casting ile bir \texttt{float} pointer'\i\ kolayca bir \texttt{int} pointer'\i na d\"{o}n\"{u}\c{s}t\"{u}r\"{u}l\"{u}p okunabilir. Bu da tip g\"{u}venli\u{g}ini (Strong Typing) deler.
+
+\newpage
+\section*{Konu 7: \.{I}fadeler (Expressions), Atamalar ve Operat\"{o}rler}
+
+\subsection*{\.{I}fadeler ve De\u{g}erlendirme S\i ras\i}
+\begin{itemize}
+    \item \textbf{Operat\"{o}rler:} Unary (tek operand, \"{o}rn: \texttt{-a}), Binary (iki operand, \"{o}rn: \texttt{a+b}), Ternary (\"{u}\c{c} operand, \"{o}rn: \texttt{a?b:c}).
+    \item \textbf{Operat\"{o}r \"{O}nceli\u{g}i ve \.{I}li\c{s}kisellik (Associativity):} Ayn\i\ \"{o}nceli\u{g}e sahip operat\"{o}rlerin i\c{s}lenme s\i ras\i d\i r. Genellikle sol-ili\c{s}kilidir (\texttt{a-b+c $\rightarrow$ (a-b)+c}). Ancak "Üs alma" (\texttt{**}) i\c{s}lemi sa\u{g}-ili\c{s}kilidir.
+    \item \textbf{Operand De\u{g}erlendirme S\i ras\i\ ve Yan Etkiler:} E\u{g}er bir ifadede, kullan\i lan fonksiyon global bir de\u{g}i\c{s}keni de\u{g}i\c{s}tiriyorsa (yan etki - side effect), operandlar\i n (sa\u{g}dan veya soldan) hangi s\i rayla de\u{g}erlendirildi\u{g}i \c{c}\i kacak sonucu tamamen de\u{g}i\c{s}tirebilir.
+\end{itemize}
+
+\subsection*{Referans \c{S}effafl\i \u{g}\i\ (Referential Transparency)}
+Ayn\i\ de\u{g}ere sahip ifadelerin, program\i n anlam\i n\i\ de\u{g}i\c{s}tirmeden birbirinin yerine ge\c{c}ebilmesi durumudur. Bu, programda "yan etki (side effect) olmad\i \u{g}\i" anlam\i na gelir. Fonksiyonel dillerde (Haskell vb.) yan etki olmad\i \u{g}\i\ i\c{c}in referans \c{s}effafl\i \u{g}\i\ her zaman sa\u{g}lan\i r.
+
+\subsection*{Operat\"{o}r A\c{s}\i r\i\ Y\"{u}kleme (Operator Overloading)}
+Aritmetik operat\"{o}rlerin birden fazla ama\c{c} i\c{c}in kullan\i lmas\i d\i r (\"{O}rn: \texttt{+} operat\"{o}r\"{u}n\"{u}n hem say\i\ toplama hem string birle\c{s}tirme yapmas\i).
+\begin{itemize}
+    \item \textbf{Avantaj:} Kodun okunabilirli\u{g}ini art\i r\i r (\"{o}rn: iki matris objesini \texttt{A * B} \c{s}eklinde \c{c}arpmak).
+    \item \textbf{Dezavantaj:} Yanl\i \c{s} veya a\c{s}\i r\i\ kullan\i l\i rsa (ayn\i\ sembol\"{u}n \"{a}lakas\i z anlamlara gelmesi) g\"{u}venilirli\u{g}i ve anla\c{s}\i labilirli\u{g}i ciddi \c{s}ekilde d\"{u}\c{s}\"{u}r\"{u}r.
+\end{itemize}
+
+\subsection*{T\"{u}r D\"{o}n\"{u}\c{s}\"{u}mleri (Conversions)}
+\begin{itemize}
+    \item \textbf{Widening (Geni\c{s}letme):} De\u{g}erin daha b\"{u}y\"{u}k kapsama sahip t\"{u}re \c{c}evrilmesi (int $\rightarrow$ float). G\"{u}venlidir.
+    \item \textbf{Narrowing (Daraltma):} Daha k\"{u}\c{c}\"{u}k kapsaml\i\ t\"{u}re d\"{o}n\"{u}\c{s}\"{u}m (double $\rightarrow$ float). Veri veya hassasiyet kayb\i\ ya\c{s}anabilir, tehlikelidir.
+\end{itemize}
+
+\subsection*{K\i sa Devre De\u{g}erlendirme (Short-Circuit Evaluation)}
+Mant\i ksal ifadelerde, t\"{u}m operandlar\i\ de\u{g}erlendirmeden ifadenin sonucunun kesinle\c{s}ti\u{g}i anda i\c{s}lemin kesilmesidir.
+\begin{itemize}
+    \item \textbf{\"{O}rnek:} \texttt{(a < 0) \&\& (b < 10)} ifadesinde \texttt{a < 0} k\i sm\i\ \texttt{FALSE} ise, t\"{u}m ifade mecburen \texttt{FALSE} olaca\u{g}\i\ i\c{c}in \texttt{(b < 10)} k\i sm\i\ i\c{s}lenmez (hesaplanmaz).
+    \item \textbf{Tehlikesi:} E\u{g}er \c{c}al\i \c{s}mayan sa\u{g} taraftaki ifadede bir de\u{g}i\c{s}ken art\i r\i m\i\ (yan etki, \"{o}rn: \texttt{b++}) varsa, k\i sa devre y\"{u}z\"{u}nden bu art\i r\i m hi\c{c} ger\c{c}ekle\c{s}meyebilir ve mant\i k hatas\i na yol a\c{c}abilir.
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize \.{I}\c{c}in \c{C}al\i \c{s}ma Sorular\i\ (Konu 7):} \\
+\textbf{Soru 1:} "Coercion (Zorunlu T\"{u}r D\"{o}n\"{u}\c{s}\"{u}m\"{u}) nedir?" \\
+\textit{\c{C}\"{o}z\"{u}m:} Derleyici taraf\i ndan programc\i n\i n m\"{u}dahalesi olmadan otomatik (\"{o}rt\"{u}k) olarak yap\i lan tip d\"{o}n\"{u}\c{s}\"{u}m\"{u}d\"{u}r. Kar\i \c{s}\i k tipli (mixed-mode) aritmetik i\c{s}lemlerde s\i k\c{c}a g\"{o}r\"{u}l\"{u}r.
+
+\textbf{Soru 2:} "Operand de\u{g}erlendirme s\i ras\i\ fonksiyonel yan etkilerle (side effects) nas\i l etkile\c{s}ir?" \\
+\textit{\c{C}\"{o}z\"{u}m:} \texttt{b = a + fun(a)} ifadesinde \texttt{fun(a)} fonksiyonu i\c{c}eride \texttt{a}'n\i n global veya referans de\u{g}erini de\u{g}i\c{s}tiriyorsa; derleyici \"{o}nce soldaki \texttt{a}'y\i\ m\i, yoksa \"{o}nce sa\u{g}daki \texttt{fun(a)}'y\i\ m\i\ \c{s}leyece\u{g}ine g\"{o}re \texttt{b}'nin alaca\u{g}\i\ sonu\c{c} farkl\i\ \c{c}\i kacakt\i r. Bu nedenle yan etkiler, de\u{g}erlendirme s\i ras\i na ba\u{g}l\i\ d\"{u}zensizlik (bug) yarat\i r.
+
+\newpage
+\section*{Konu 8: Kontrol Ak\i\c{s}\i\ - Se\c{c}im Yap\i lar\i}
+
+\subsection*{Kontrol Ak\i\c{s}\i\ Seviyeleri}
+Program\i n \c{c}al\i \c{s}ma s\i ras\i\ \"{u}\c{c} seviyede ele al\i n\i r \cite:
+\begin{itemize}
+    \item \textbf{\.{I}fade D\"{u}zeyi:} Operat\"{o}r \"{o}nceli\u{g}i ve ili\c{s}kiselli\u{g}i ile belirlenir.
+    \item \textbf{Deyim (Statement) D\"{u}zeyi:} \texttt{if}, \texttt{switch}, \texttt{loop} gibi yap\i larla ak\i \c{s} de\u{g}i\c{s}tirilir.
+    \item \textbf{Program Birimi D\"{u}zeyi:} Fonksiyon ve prosed\"{u}r \c{c}a\u{g}r\i lar\i\ ile y\"{o}netilir.
+\end{itemize}
+
+\subsection*{\.{I}kili Se\c{c}im (Two-Way Selection)}
+\begin{itemize}
+    \item \textbf{Kontrol \.{I}fadesi:} C dillerinde say\i sal de\u{g}erler (0 false, di\u{g}erleri true) kullan\i labilirken, Java'da yaln\i zca \texttt{boolean} t\"{u}r\"{u} zorunludur \cite.
+    \item \textbf{Dangling Else Problemi:} Bir \texttt{else} ifadesinin hangi \texttt{if}'e ait oldu\u{g}u belirsizli\u{g}idir. Java gibi dillerde \textbf{"en yak\i n bo\c{s}taki if"} kural\i\ ge\c{c}erliyken, Python'da bu sorun \textbf{girinti (indentation)} ile \c{c}\"{o}z\"{u}l\"{u}r \cite.
+    \item \textbf{Fonksiyonel Diller:} ML ve F\# gibi dillerde \texttt{if} bir deyim de\u{g}il, \textbf{ifadedir} (expression). Yani bir de\u{g}er d\"{o}nd\"{u}r\"{u}r ve \texttt{else} blo\u{g}u zorunludur \cite.
+\end{itemize}
+
+\subsection*{\c{C}oklu Se\c{c}im (Switch-Case)}
+\begin{itemize}
+    \item \textbf{Fall-through:} C, C++ ve Java'da \texttt{break} kullan\i lmazsa ak\i \c{s} bir sonraki \texttt{case}'e devam eder. Bu durum hem esneklik sa\u{g}lar hem de hata riskini art\i r\i r \cite.
+    \item \textbf{\.{I}mplementasyon Y\"{o}ntemleri:}
+    \begin{itemize}
+        \item \textbf{Jump Table:} En h\i zl\i\ y\"{o}ntemdir; durum de\u{g}erleri bir indeks tablosu olarak tutulur ($O(1)$) \cite.
+        \item \textbf{Hash Table:} De\u{g}erler aral\i kl\i\ (sparse) ise etkilidir.
+        \item \textbf{Binary Search:} Durum say\i s\i\ fazlaysa do\u{g}rusal aramadan daha h\i zl\i d\i r ($O(\log n)$) \cite.
+    \end{itemize}
+\end{itemize}
+
+\newpage
+\section*{Konu 9: Kontrol Ak\i\c{s}\i\ - D\"{o}ng\"{u}ler ve Guarded Commands}
+
+\subsection*{D\"{o}ng\"{u} Yap\i lar\i\ (Iterative Statements)}
+D\"{o}ng\"{u}ler kontrol mekanizmas\i na g\"{o}re s\i n\i fland\i r\i l\i r \cite:
+\begin{itemize}
+    \item \textbf{Saya\c{c} Kontroll\"{u} (Counter-controlled):} Belirli bir say\i da tekrar eder (\texttt{for}). Tasar\i mda d\"{o}ng\"{u} de\u{g}i\c{s}keninin d\"{o}ng\"{u} i\c{c}inde de\u{g}i\c{s}tirilip de\u{g}i\c{s}tirilemeyece\u{g}i kritik bir sorudur.
+    \item \textbf{Mant\i ksal Kontroll\"{u} (Logically-controlled):} Bir ko\c{s}ul do\u{g}ru oldu\u{g}u s\"{u}rece \c{c}al\i \c{s}ar (\texttt{while}, \texttt{do-while}).
+    \item \textbf{Veri Tabanl\i\ (Data-based):} Bir koleksiyonun (list, array) elemanlar\i\ \"{u}zerinde gezer (\texttt{foreach}).
+\end{itemize}
+
+\subsection*{Kontrol Zaman\i: Pretest vs Posttest}
+\begin{itemize}
+    \item \textbf{Pretest (\"{O}n Kontrol):} Ko\c{s}ul d\"{o}ng\"{u} ba\c{s}\i nda kontrol edilir (\texttt{while}). Ko\c{s}ul ba\c{s}lang\i \c{c}ta yanl\i \c{s}sa d\"{o}ng\"{u} \textbf{hi\c{c} \c{c}al\i \c{s}maz} \cite.
+    \item \textbf{Posttest (Son Kontrol):} Ko\c{s}ul d\"{o}ng\"{u} sonunda kontrol edilir (\texttt{do-while}). D\"{o}ng\"{u} \textbf{en az bir kez} \c{c}al\i \c{s}may\i\ garanti eder \cite.
+\end{itemize}
+
+\subsection*{Guarded Commands (Dijkstra)}
+Edsger Dijkstra taraf\i ndan programlar\i n matematiksel olarak do\u{g}rulanabilirli\u{g}ini (verifiability) art\i rmak i\c{c}in geli\c{s}tirilmi\c{s}tir \cite.
+\begin{itemize}
+    \item \textbf{Deterministik Olmayan Yap\i\ (Nondeterminism):} Birden fazla "guard" (ko\c{s}ul) do\u{g}ruysa, sistem bunlardan \textbf{rastgele} birini se\c{c}er. Bu, programc\i y\i\ belirli bir s\i raya ba\u{g}l\i\ kalmaktan kurtar\i r \cite.
+    \item \textbf{Guarded Selection (if):} Hi\c{c}bir guard do\u{g}ru de\u{g}ilse hata olu\c{s}ur.
+    \item \textbf{Guarded Loop (do):} En az bir guard do\u{g}ru oldu\u{g}u s\"{u}rece d\"{o}ng\"{u} devam eder. T\"{u}m guardlar yanl\i \c{s} oldu\u{u}nda d\"{o}ng\"{u} güvenli bir \c{s}ekilde sona erer \cite.
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize \.{I}\c{c}in \c{C}al\i \c{s}ma Sorular\i}
+
+\begin{itemize}
+    \item \textbf{Soru 1:} C dillerindeki \texttt{switch} yap\i s\i nda neden \texttt{break} kullan\i l\i r? \\
+    \textit{\c{C}\"{o}z\"{u}m:} \texttt{break} kullan\i lmazsa "fall-through" ger\c{c}ekle\c{s}ir ve ak\i \c{s} alt sat\i rdaki case'lere ge\c{c}er. \texttt{break} bu ak\i \c{s}\i\ kesip d\"{o}ng\"{u}den/se\c{c}imden \c{c}\i kmay\i\ sa\u{g}lar \cite.
+    \item \textbf{Soru 2:} Pretest ve Posttest d\"{o}ng\"{u}lerin temel fark\i\ nedir? \\
+    \textit{\c{C}\"{o}z\"{u}m:} Pretest d\"{o}ng\"{u} ko\c{s}ul sa\u{g}lanmazsa 0 kez \c{c}al\i \c{s}abilir; Posttest d\"{o}ng\"{u} ise ko\c{s}ul ne olursa olsun en az 1 kez \c{c}al\i \c{s}\i r \cite.
+    \item \textbf{Soru 3:} Dijkstra'n\i n Guarded Command yap\i s\i n\i n ana amac\i\ nedir? \\
+    \textit{\c{C}\"{o}z\"{u}m:} Programlar\i n matematiksel olarak ispatlanabilir (provable) ve do\u{g}rulanabilir (verifiable) olmas\i n\i\ sa\u{g}lamakt\i r \cite.
+\end{itemize}
+\newpage
+\section*{Konu 10: Alt Programlar (Subprograms)}
+
+\subsection*{Alt Programların Temel Özellikleri ve Soyutlama}
+Alt programlar, programların temel yapı taşlarıdır ve tasarımın en kritik kavramlarından biri olarak kabul edilirler.
+\begin{itemize}
+    \item \textbf{Avantajları:} Kod tekrarını önler, bellek ve zaman tasarrufu sağlar, programın mantıksal yapısını öne çıkararak okunabilirliği artırır.
+    \item \textbf{Soyutlama (Abstraction):} İki temel soyutlama vardır. \textit{İşlem soyutlaması}, alt programlar aracılığıyla sağlanır; \textit{Veri soyutlaması} ise nesne yönelimli programlama ile önem kazanmıştır. Alt programın iç detayları gizlenir, çağıran program sadece sonucu kullanır.
+\end{itemize}
+
+\subsection*{Prosedürler ve Fonksiyonlar}
+Alt programlar genel olarak ikiye ayrılır:
+\begin{itemize}
+    \item \textbf{Prosedürler (Procedures):} Değer döndürmezler ve programın durumunu değiştiren yeni \textit{ifadeler (statements)} tanımlarlar.
+    \item \textbf{Fonksiyonlar (Functions):} Bir değer döndürürler ve matematiksel fonksiyonlara benzer şekilde yeni \textit{operatörler} tanımlarlar.
+\end{itemize}
+
+\subsection*{Parametre Geçiş Yöntemleri (Parameter Passing)}
+Parametre geçişleri semantik (anlamsal) ve uygulama olarak farklı modellere ayrılır:
+\begin{itemize}
+    \item \textbf{Semantik Modeller:}
+    \begin{itemize}
+        \item \textbf{in modu:} Çağırandan alt programa veri aktarılır.
+        \item \textbf{out modu:} Alt programdan çağırana veri aktarılır.
+        \item \textbf{inout modu:} Her iki yönde de veri aktarımı olur.
+    \end{itemize}
+    \item \textbf{Uygulama Yöntemleri:}
+    \begin{itemize}
+        \item \textbf{Pass-by-value (Değer ile geçiş):} \texttt{in} modunu uygular. Hızlı erişim sağlar ancak fiziksel kopyalama yapıldığı için ek bellek ve zaman maliyeti yaratır.
+        \item \textbf{Pass-by-result (Sonuç ile geçiş):} \texttt{out} modunu uygular.
+        \item \textbf{Pass-by-value-result:} \texttt{inout} modunu uygular. Kopyalama yoluyla çift yönlü veri aktarımıdır.
+        \item \textbf{Pass-by-reference (Referans ile geçiş):} \texttt{inout} modunu uygular. Kopyalama yapılmaz, sadece erişim yolu (adres) gönderilir. Verimlidir ancak \textbf{alias (gölgeleme/takma ad)} sorunlarına yol açabilir.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Tasarım Konuları}
+Alt program tasarlanırken dikkate alınan temel hususlar: Yerel değişkenlerin bellek tahsisi, nested (iç içe) yapılar, tür kontrolü, aşırı yükleme (overloading), generic yapılar ve closure'lardır.
+
+\vspace{0.5cm}
+\textbf{Vize İçin Çalışma Soruları (Konu 10)}
+\begin{itemize}
+    \item \textbf{Soru 1:} Pass-by-value ve Pass-by-reference arasındaki temel farklar ve maliyetler (avantaj/dezavantaj) nelerdir? \\
+    \textit{Çözüm:} Pass-by-value verinin kopyasını gönderir; fonksiyon içinde erişim çok hızlıdır ancak büyük veri yapılarında kopyalama maliyeti (bellek ve zaman) çok yüksektir. Pass-by-reference ise sadece adresi gönderir; kopyalama maliyeti yoktur, verimlidir ancak aynı belleğe farklı isimlerle erişilebildiği için alias sorunlarına (istenmeyen yan etkilere) neden olabilir.
+    \item \textbf{Soru 2:} Prosedür ve Fonksiyon kavramlarını alt programlar bağlamında karşılaştırınız. \\
+    \textit{Çözüm:} Prosedürler değer döndürmez ve kodu değiştiren komutlar (statements) koleksiyonudur. Fonksiyonlar ise bir değer üretip döndürürler ve ifadeler (expressions) içinde operatör gibi kullanılırlar.
+\end{itemize}
+
+\newpage
+\section*{Konu 11: İleri Alt Program Kavramları (Parametreler, Closures, Coroutines)}
+
+\subsection*{Fonksiyonların Parametre Olarak Kullanılması}
+\begin{itemize}
+    \item Bazı algoritmalar, diğer alt programları (fonksiyonları) parametre olarak almalıdır. Bu, yazılım mühendisliğinde çok yüksek seviyeli bir soyutlama ve kod tekrarı önleme imkanı sağlar.
+    \item \textbf{Örnek Uygulama:} Bir integral hesaplama fonksiyonu (\texttt{integrate(f, a, b, n)}), \texttt{f} parametresi sayesinde farklı matematiksel fonksiyonların (örn. $x^2$ veya $x^3$) integrallerini tek bir kod bloğu ile hesaplayabilir.
+    \item \textbf{Tip Denetimi (Type Checking) Problemi:} Fonksiyonlar parametre olarak geçirilirken dilin tür güvenliğini sağlaması gerekir.
+    \begin{itemize}
+        \item C ve C++ dillerinde bu işlem \textbf{function pointer'lar (fonksiyon işaretçileri)} ile yapılır.
+        \item Java'da fonksiyon işaretçileri yoktur; bunun yerine fonksiyonları barındıran \textbf{arayüzler (interfaces)} veya nesneler gönderilir.
+        \item C\#'ta bu mekanizma için tür güvenli \textbf{delegate'ler} kullanılır.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Closure (Kapanış)}
+Closure, bir alt program ile o alt programın tanımlandığı referans ortamının (referencing environment) birleşimidir.
+\begin{itemize}
+    \item \textbf{Gereksinimler:} Bir closure oluşturabilmek için dilde \textbf{statik kapsam (static scope)} ve \textbf{iç içe fonksiyon (nested function)} desteği olmalıdır.
+    \item \textbf{Yaşam Süresi Uzatması:} Closure'ların en kritik özelliği, yerel değişkenlerin yaşam süresini (lifetime) uzatmalarıdır. Normalde stack üzerinde yaratılıp silinmesi gereken bir yerel değişken (örn. bir sayacı tutan \texttt{count} değişkeni), closure sayesinde \textbf{Heap (dinamik bellek) tahsisi} yapılarak fonksiyon çağrısı bitse bile bellekte korunmaya devam eder.
+\end{itemize}
+
+\subsection*{Coroutine (Eşyordam)}
+Coroutineler, klasik fonksiyonlardan (subroutines) yapısal olarak farklı çalışan özel alt programlardır.
+\begin{itemize}
+    \item \textbf{Çoklu Giriş Noktası:} Klasik fonksiyonlar tek bir noktadan başlar ve bitince sonlanır. Coroutineler ise \textbf{çoklu giriş noktasına} sahiptir.
+    \item \textbf{Durum Koruma ve Resume:} Coroutine çalışmasını duraklatabilir, o anki durumunu (state) koruyabilir ve daha sonra kaldığı yerden \textbf{resume (devam et)} mekanizması ile çalışmaya devam edebilir. (Oyun programlama veya asenkron veri akışlarında çok sık kullanılır).
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Vize İçin Çalışma Soruları (Konu 11)}
+\begin{itemize}
+    \item \textbf{Soru 1:} Bir dilde Closure yapısının kurulabilmesi için teknik olarak hangi özelliklerin bulunması zorunludur? Yaşam süresi açısından nasıl bir etkisi vardır? \\
+    \textit{Çözüm:} Statik scope (sözcüksel kapsam) ve nested functions (iç içe fonksiyonlar) desteği zorunludur. Closure kullanıldığında, içteki fonksiyon dıştaki fonksiyonun yerel değişkenlerine erişiyorsa, dış fonksiyon sonlansa bile bu değişkenlerin yaşam süresi uzatılır (değişkenler stack yerine heap'te tutulur ve kaybolmaz).
+    \item \textbf{Soru 2:} Klasik alt programlar (Subroutine) ile Coroutine arasındaki mimari farklar nelerdir? \\
+    \textit{Çözüm:} Klasik alt programların tek bir giriş (başlangıç) noktası vardır ve çağıran programa dönene (return) kadar çalışıp durumlarını kaybederler. Coroutine'ler ise çoklu giriş noktalarına sahiptir, "resume" komutuyla birbirlerini çağırabilir ve duraklatıldıklarında yerel durumlarını (state) kaybetmeden bekleyebilirler.
+\end{itemize}
+\end{document}

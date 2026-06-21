@@ -1,0 +1,42 @@
+{
+  "okunan_envanter_girdisi": 23,
+  "metin_cikarilan_kaynak": 22,
+  "soru_sayisi": 160,
+  "soru_turleri": {
+    "test": 84,
+    "klasik": 24,
+    "dil_tanima": 24,
+    "kod_yorumlama": 28
+  },
+  "klasor_yapisi": {
+    "vize": "00_KAYNAKLAR\\01_vize_temeli_slaytlar",
+    "final": "00_KAYNAKLAR\\02_final_agirlikli_slaytlar",
+    "proje": "00_KAYNAKLAR\\03_proje_odevleri_ve_dil_raporlari",
+    "ek": "00_KAYNAKLAR\\04_ek_materyaller",
+    "ozet": "01_OZETLER",
+    "app": "02_INTERAKTIF_SISTEM",
+    "veri": "03_VERI",
+    "rapor": "04_RAPORLAR"
+  },
+  "proje_dilleri": [
+    "Rust",
+    "Go",
+    "Scala",
+    "Erlang"
+  ],
+  "final_kritik_konular": [
+    "Compile-time vs run-time, compiler, interpreter, JIT",
+    "Static scope, dynamic scope, binding",
+    "Lifetime, static/stack/heap, dangling pointer",
+    "Type checking, strong/weak typing, coercion",
+    "Expressions, precedence, associativity, short-circuit, side effect",
+    "Alt programlar, formal/actual parametre, function/procedure",
+    "Pass-by-value/reference/result/value-result/name",
+    "Function parameter binding: shallow, deep, ad hoc",
+    "Closure ve coroutine",
+    "Subprogram linkage, activation record, recursion",
+    "ADT, veri soyutlama, encapsulation",
+    "OOP, inheritance, polymorphism, dynamic binding",
+    "Concurrency, race condition, semaphore, monitor, message passing"
+  ]
+}
